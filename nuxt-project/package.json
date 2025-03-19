@@ -7,9 +7,12 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "tailwindcss": "npx @tailwindcss/cli -i/assets/css/main.css -o ./dist/css/output.css --watch"
   },
   "dependencies": {
+    "@formkit/icons": "^1.6.9",
+    "@formkit/nuxt": "^1.6.9",
     "@tailwindcss/vite": "^4.0.14",
     "nuxt": "^3.16.1",
     "tailwindcss": "^4.0.14",
