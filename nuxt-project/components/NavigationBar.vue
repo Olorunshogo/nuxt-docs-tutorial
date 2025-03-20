@@ -9,6 +9,7 @@
         isSidebarOpen.value = !isSidebarOpen.value;
     }
 
+    // Close Sidebar
     function closeSidebar() {
         isSidebarOpen.value = false;
     }
@@ -60,95 +61,59 @@
 
                 <div
                     :class="{'transform translate-x-90': isSidebarOpen, 'transform transform-x-0': !isSidebarOpen}"
-                    class="fixed top-0 z-50 flex w-2/4 h-full p-4 space-x-4 transition-transform duration-300 ease-in-out bg-gray-900 -left-90 md:hidden"
+                    class="fixed top-0 z-50 flex w-2/4 h-full p-4 space-x-4 transition-transform duration-300 ease-in-out bg-gray-900 -left-90 md:hidden  *:px-4 *:py-2 *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl"
                 >
-                    <NuxtLink
-                        to="/" aria-label="Go to Home" @click="closeSidebar"
-                        class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
+                    <NuxtLink to="/" aria-label="Go to Home"  @click="closeSidebar">
                         Home
                     </NuxtLink>
 
-                    <NuxtLink
-                        to="/about" aria-label="Go to About" @click="closeSidebar"
-                        class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
+                    <NuxtLink to="/about" aria-label="Go to About"  @click="closeSidebar" target="_blank">
                         About
                     </NuxtLink>
 
-                    <NuxtLink
-                        to="/services" aria-label="Go to Services" @click="closeSidebar"
-                        class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                        Services
+                    <NuxtLink to="/posts/1" aria-label="Go to Post 1" @click="closeSidebar" target="_blank">
+                        Post 1
                     </NuxtLink>
 
-                    <NuxtLink
-                        to="/contact" aria-label="Go to Contact" @click="closeSidebar"
-                        class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                        Contact
+                    <NuxtLink to="/posts/2" aria-label="Go to Post 2" @click="closeSidebar" target="_blank">
+                        Post 2
                     </NuxtLink>
                 </div>
 
                 <!-- Desktop Navigation (Flex) -->
-                <div class="hidden space-x-6 md:flex">
-                    <NuxtLink
-                        to="/" aria-label="Go to Home"
-                        class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
+                <div class="hidden space-x-6 md:flex *:px-4 *:py-2 *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl">
+                    <NuxtLink to="/" aria-label="Go to Home">
                         Home
                     </NuxtLink>
 
-                    <NuxtLink
-                        to="/about" aria-label="Go to About"
-                        class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
+                    <NuxtLink to="/about" aria-label="Go to About" target="_blank">
                         About
                     </NuxtLink>
 
-                    <!-- <NuxtLink
-                        to="/services" aria-label="Go to Services"
-                        class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                        Services
+                    <NuxtLink to="/posts/1" aria-label="Go to Post 1" target="_blank">
+                        Post 1
                     </NuxtLink>
 
-                    <NuxtLink
-                        to="/contact" aria-label="Go to Contact"
-                        class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                        Contact
-                    </NuxtLink> -->
+                    <NuxtLink to="/posts/2" aria-label="Go to Post 2" target="_blank">
+                        Post 2
+                    </NuxtLink>
                 </div>
 
                 <!-- Mobile Navigation (Grid) -->
-                <!-- <div class="grid grid-cols-1 gap-4 md:hidden">
-                    <NuxtLink
-                        to="/" aria-label="Go to Home"
-                        class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
+                <!-- <div class="grid grid-cols-1 gap-4 md:hidden *:px-4 *:py-2 *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl">
+                    <NuxtLink to="/" aria-label="Go to Home">
                         Home
                     </NuxtLink>
 
-                    <NuxtLink
-                        to="/about" aria-label="Go to About"
-                        class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
+                    <NuxtLink to="/about" aria-label="Go to About" target="_blank>
                         About
                     </NuxtLink>
 
-                    <NuxtLink
-                        to="/services" aria-label="Go to Services"
-                        class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
-                        Services
+                    <NuxtLink to="/posts/1" aria-label="Go to Post 1" target="_blank>
+                        Post 1
                     </NuxtLink>
 
-                    <NuxtLink
-                        to="/contact" aria-label="Go to Contact"
-                        class="hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >
+                    <NuxtLink to="/posts/2" aria-label="Go to Post 2" target="_blank>
                         Contact
                     </NuxtLink>
                 </div> -->

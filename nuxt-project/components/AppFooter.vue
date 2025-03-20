@@ -1,12 +1,12 @@
 
 <script lang="ts" setup>
-  // const date = ref()
+  const currentYear = new Date().getFullYear();
 </script>
 
 <template>
   <div>
     <footer class="p-4 font-sans text-white bg-gray-800">
-      <div class="grid mx-auto sm:grid-cols-1 md:grid-cols-2 lg:flex lg:flex-wrap lg:justify-between max-w-7xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-wrap lg:justify-between max-w-7xl">
         <div class="flex-1 m-2.5">
           <h3 class="mb-2.5 font-semibold text-lg">About Us</h3>
           <p>We are a leading company providing high-quality products and services.</p>
@@ -19,13 +19,13 @@
               <NuxtLink to="/">Home</NuxtLink>
             </li>
             <li class="mb-2 *:text-white *:decoration-0 *:hover:underline *:hover:decoration-1">
-              <NuxtLink to="/about">About</NuxtLink>
+              <NuxtLink to="/about" target="_blank">About</NuxtLink>
             </li>
             <li class="mb-2 *:text-white *:decoration-0 *:hover:underline *:hover:decoration-1">
-              <NuxtLink to="/services">Services</NuxtLink>
+              <NuxtLink to="/services" target="_blank">Services</NuxtLink>
             </li>
             <li class="mb-2 *:text-white *:decoration-0 *:hover:underline *:hover:decoration-1">
-              <NuxtLink to="/contact">Contact</NuxtLink>
+              <NuxtLink to="/contact" target="_blank">Contact</NuxtLink>
             </li>
           </ul>
         </div>
@@ -36,8 +36,12 @@
           <p>Phone: +234(0) 704 4456 7789</p>
         </div>
 
-        <div class="mt-6 text-sm text-center">
-          <p>&copy; 2025 Company Name. All rights reserved.</p>
+        <div class="mt-6 text-sm text-center md:text-left">
+          <p>
+            &copy; 
+            {{ currentYear }}
+            Company Name. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
