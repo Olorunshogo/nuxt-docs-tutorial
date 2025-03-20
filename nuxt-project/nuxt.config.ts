@@ -11,9 +11,7 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  modules: [
-    '@formkit/nuxt'
-  ],
+  modules: ['@formkit/nuxt'],
   formkit: {
     // Experimental support for auto Loading (see note)
     autoImport: true,

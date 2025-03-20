@@ -10,7 +10,12 @@
 
 <template>
   <div>
-    
+    <div>
+      <h1>Welcome to homepage</h1>
+      <AppAlert>
+        This is an auto-imported component.
+      </AppAlert>
+    </div>
   </div>
 </template>
 

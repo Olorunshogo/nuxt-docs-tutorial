@@ -13,6 +13,7 @@
   "dependencies": {
     "@formkit/icons": "^1.6.9",
     "@formkit/nuxt": "^1.6.9",
+    "@nuxt/icon": "^1.11.0",
     "@tailwindcss/vite": "^4.0.14",
     "nuxt": "^3.16.1",
     "tailwindcss": "^4.0.14",
