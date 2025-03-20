@@ -11,6 +11,28 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  typescript: {
+    shim: false
+  },
+
+  app: {
+    head: {
+      charset: 'utf-16',
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+      title: 'NUXT App',
+      titleTemplate: '%s - Get Started with NUXT',
+      meta: [
+        { name: 'description', content: 'NUXT APP' }
+      ],
+      htmlAttrs: {
+        lang: 'en'
+      },
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: './public/favicon.ico' }
+      ]
+    }
+  },
+
   modules: ['@formkit/nuxt'],
   formkit: {
     // Experimental support for auto Loading (see note)
@@ -24,7 +46,11 @@ export default defineNuxtConfig({
     apiSecret: '123',
     // Keys withing public are alse exposed client-side
     public: {
-      apiBase: '/api'
+      apiBase: '/api',
+      // backendBaseUrl: BACKEND_URL,
+      // // production | development
+      // appEnvironment: ProcessingInstruction.env.APP_ENVIRONMENT || "development",
+      // imageBaseUrlAws: ProcessingInstruction.env.IMAGE_BASE_URL_AWS || "",
     }
   },
 

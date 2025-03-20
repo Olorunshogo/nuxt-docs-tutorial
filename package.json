@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@nuxt/typescript-build": "^3.0.2"
+  }
+}

@@ -6,7 +6,7 @@
 <template>
   <div>
     <footer class="p-4 font-sans text-white bg-gray-800">
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-wrap lg:justify-between max-w-7xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:mx-auto xl:flex xl:flex-wrap lg:justify-between max-w-7xl">
         <div class="flex-1 m-2.5">
           <h3 class="mb-2.5 font-semibold text-lg">About Us</h3>
           <p>We are a leading company providing high-quality products and services.</p>

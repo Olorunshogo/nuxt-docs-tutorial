@@ -10,11 +10,15 @@
     //     }
     // })
 
+    useHead({
+        title: 'Posts[1]'
+    })
+
 </script>
 
 <template>
 <div>
-    
+    <h1>Post 1 Page</h1>
 </div>
 </template>
 

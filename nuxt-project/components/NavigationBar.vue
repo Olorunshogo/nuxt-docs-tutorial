@@ -67,7 +67,7 @@
                         Home
                     </NuxtLink>
 
-                    <NuxtLink to="/about" aria-label="Go to About"  @click="closeSidebar" target="_blank">
+                    <NuxtLink to="/about" aria-label="Go to About"  @click="closeSidebar">
                         About
                     </NuxtLink>
 
@@ -86,7 +86,7 @@
                         Home
                     </NuxtLink>
 
-                    <NuxtLink to="/about" aria-label="Go to About" target="_blank">
+                    <NuxtLink to="/about" aria-label="Go to About">
                         About
                     </NuxtLink>
 
@@ -105,15 +105,15 @@
                         Home
                     </NuxtLink>
 
-                    <NuxtLink to="/about" aria-label="Go to About" target="_blank>
+                    <NuxtLink to="/about" aria-label="Go to About">
                         About
                     </NuxtLink>
 
-                    <NuxtLink to="/posts/1" aria-label="Go to Post 1" target="_blank>
+                    <NuxtLink to="/posts/1" aria-label="Go to Post 1" target="_blank">
                         Post 1
                     </NuxtLink>
 
-                    <NuxtLink to="/posts/2" aria-label="Go to Post 2" target="_blank>
+                    <NuxtLink to="/posts/2" aria-label="Go to Post 2" target="_blank">
                         Contact
                     </NuxtLink>
                 </div> -->
