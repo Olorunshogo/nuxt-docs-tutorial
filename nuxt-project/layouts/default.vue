@@ -1,11 +1,20 @@
 
 <script lang="ts" setup>
-
+  import { computed } from 'vue';
+  import { useRoute } from 'vue-router';
+  const route = useRoute();
+  const id = computed(() => Number(route.params.id || 1));
+  const prev = computed(() => '/' + (id.value - 1));
+  const next = computed(() => '/' + (id.value + 1));
 </script>
 
 <template>
   <div id="default-layout">
     <AppHeader class="sticky z-[99] inset-0 bottom-[unset]" />
+    <div v-if="route.params.id">
+      <NuxtLink :to="prev">⬅️</NuxtLink> |
+      <NuxtLink :to="next">➡️</NuxtLink>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-wrap lg:justify-between xl:mx-auto max-w-7xl">
       <slot>Default Layout Content</slot>
     </div>

@@ -61,7 +61,7 @@
 
                 <div
                     :class="{'transform translate-x-90': isSidebarOpen, 'transform transform-x-0': !isSidebarOpen}"
-                    class="fixed top-0 z-50 flex w-2/4 h-full p-4 space-x-4 transition-transform duration-300 ease-in-out bg-gray-900 -left-90 md:hidden  *:px-4 *:py-2 *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl"
+                    class="fixed top-0 z-50 flex w-2/4 h-full p-4 space-x-4 transition-transform duration-300 ease-in-out bg-gray-900 -left-90 md:hidden  *:px-4 *:py-2 *:rounded-lg *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl"
                 >
                     <NuxtLink to="/" aria-label="Go to Home"  @click="closeSidebar">
                         Home
@@ -81,7 +81,7 @@
                 </div>
 
                 <!-- Desktop Navigation (Flex) -->
-                <div class="hidden space-x-6 md:flex *:px-4 *:py-2 *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl">
+                <div class="hidden space-x-6 md:flex *:px-4 *:rounded-lg *:py-2 *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl">
                     <NuxtLink to="/" aria-label="Go to Home">
                         Home
                     </NuxtLink>
@@ -100,7 +100,7 @@
                 </div>
 
                 <!-- Mobile Navigation (Grid) -->
-                <!-- <div class="grid grid-cols-1 gap-4 md:hidden *:px-4 *:py-2 *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl">
+                <!-- <div class="grid grid-cols-1 gap-4 md:hidden *:px-4 *:py-2 *:rounded-lg *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl">
                     <NuxtLink to="/" aria-label="Go to Home">
                         Home
                     </NuxtLink>
