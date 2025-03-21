@@ -7,4 +7,18 @@
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 1rem;
     } */
+
+    .btn-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 0 1rem;
+    }
+
+    .normal-btn {
+        padding: 0.5rem 1rem;
+        border: 1px solid grey;
+        border-radius: 0.5rem;
+        border: 1px solid gray;
+    }
 }

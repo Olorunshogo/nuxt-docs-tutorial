@@ -15,8 +15,9 @@
       <NuxtLink :to="prev">⬅️</NuxtLink> |
       <NuxtLink :to="next">➡️</NuxtLink>
     </div>
+    
     <!-- <div class="grid grid-cols-1 bg-green-700 md:grid-cols-2 xl:flex xl:flex-wrap lg:justify-between xl:mx-auto max-w-7xl"> -->
-    <div class="flex flex-col mx-auto max-w-7xl w-5/5">
+    <div class="flex flex-col p-4 mx-auto lg:p-8 max-w-7xl w-5/5">
       <slot>
         Default Layout Content
       </slot>

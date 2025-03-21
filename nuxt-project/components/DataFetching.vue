@@ -1,7 +1,9 @@
 
 <script lang="ts" setup>
     import { ref } from 'vue';
-    import { useFetch, useAsyncData } from 'nuxt/app';
+    import { useFetch, useAsyncData, useState } from 'nuxt/app';
+    import type { ProductInfo, Product } from '../types/products';
+    import { useLocales, useLocale, useDefaultLocale, useLocaleDate } from '../stores/locale';
 
     const data = ref<any>(null);
     const formData = ref({
@@ -35,7 +37,7 @@
         }
     }
 
-    // Video
+    // Data Fetching with NUXT3 by John Kramanski
     // const { pending, data: products, refresh } = useFetch(
     //     'https://fakestoreapi.com/products', 
     //     {
@@ -58,8 +60,7 @@
     //         // pick: ["id","image", "title"],
     //     }
     // );  
-
-    const { pending, data: productInfo, refresh, error } = useAsyncData(
+    const { pending, data: productInfo, refresh, error } = useAsyncData<ProductInfo>(
         'productInfo', 
         async () => {
             const [products, categories] = await Promise.all([
@@ -68,9 +69,9 @@
             ]);
             
             return {
-                products, 
-                categories,
-            }        
+                products: products as Product[], 
+                categories: categories as string[],
+            };      
         }, 
         {
             lazy: false,
@@ -87,7 +88,19 @@
         }
     )
 
+    const handleRefresh = async (event: Event) => {
+        await refresh();
+    };
+    
+    // State Management: useState()
+    const counter = useState('counter', () => Math.round(Math.random() * 1000));
+    
+    const locales = useLocales()
+    const locale = useLocale()
+    const date = useLocaleDate(new Date('2016-10-26'))
 
+    const useColor = () => useState<string>('color', () => 'pink')
+    const currentColor = useColor();
 
 </script>
 
@@ -132,6 +145,7 @@
             
         </div>
 
+        <!-- John Kraminski's video example on Data Fetching with NUXT3 -->
         <div>
             <div v-if="pending">
                 <p>Loading</p>
@@ -143,7 +157,7 @@
             </div>
 
             <div v-else>
-                <button @click="refresh">Refresh Data</button>
+                <button @click="handleRefresh">Refresh Data</button>
 
                 <!-- <div class="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                     <div 
@@ -158,19 +172,47 @@
 
                 </div> -->
 
-                <div class="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                    <div 
-                        v-for="product in productInfo.products" :key="product.id"
-                        class="grid grid-cols-1 p-4 bg-white rounded-lg shadow-lg"
-                    >
-                        <img :src="product.image" alt="" class="flex mx-auto h-auto w-[75px]">
-                        <h2 class="mt-2 text-sm text-center text-black">{{ product.title }}</h2>
-                    </div>
+                <div v-if="productInfo?.products">
+                    <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                        <div 
+                            v-for="product in productInfo.products" :key="product.id"
+                            class="grid grid-cols-1 p-4 bg-white rounded-lg shadow-lg"
+                        >
+                            <img :src="product.image" alt="" class="flex mx-auto h-auto w-[75px]">
+                            <h2 class="mt-2 text-sm text-center text-black">{{ product.title }}</h2>
+                        </div>
 
+                    </div>
                 </div>
             </div>
             
             
+        </div>
+
+        <!-- State Management -->
+        <div>
+            <div class="flex items-center">
+                Counter: {{ counter }}
+                <div class="btn-container">
+                    <button @click="counter+=2" class="shadow-lg normal-btn">+ 2</button>
+                    <button @click="counter-=1" class="shadow-lg normal-btn">- 1</button>
+                </div>
+            </div>
+
+            <div>
+                <h2>NUXT birthday</h2>
+                <p>{{ date }}</p>
+                <label for="locale-chooser">Preview a different locale</label>
+                <select name="locale-chooser" id="locale-chooser" v-model="locale">
+                    <option id="locale-chooser" :key="locale" :value="locale">
+                        {{ locale }}
+                    </option>
+                </select>
+            </div>
+
+            <div>
+                <p>Current color: {{ currentColor }}</p>
+            </div>
         </div>
     </div>
 </template>
