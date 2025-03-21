@@ -9,16 +9,19 @@
 </script>
 
 <template>
-  <div id="default-layout">
+  <div id="default-layout" class="w-screen h-full text-white bg-black">
     <AppHeader class="sticky z-[99] inset-0 bottom-[unset]" />
     <div v-if="route.params.id">
       <NuxtLink :to="prev">⬅️</NuxtLink> |
       <NuxtLink :to="next">➡️</NuxtLink>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:flex xl:flex-wrap lg:justify-between xl:mx-auto max-w-7xl">
-      <slot>Default Layout Content</slot>
+    <!-- <div class="grid grid-cols-1 bg-green-700 md:grid-cols-2 xl:flex xl:flex-wrap lg:justify-between xl:mx-auto max-w-7xl"> -->
+    <div class="flex flex-col mx-auto max-w-7xl w-5/5">
+      <slot>
+        Default Layout Content
+      </slot>
     </div>
-    <AppFooter class="mt-16" />
+    <AppFooter/>
   </div>
 </template>
 

@@ -2,12 +2,7 @@
 <script lang="ts" setup>
   import { useSeoMeta, useHead } from '#app';
   useSeoMeta({
-    title: 'app.vue',
-    ogTitle: 'Get',
-    description: 'This is my amazing site, let me tell you all about it.',
-    ogDescription: 'This is my amazing site, let me tell you all about it.',
-    ogImage: 'https://example.com/image.png',
-    twitterCard: 'summary_large_image',
+    title: 'App.vue',
   })
 
   useHead({
@@ -22,9 +17,10 @@
 <template>
   <div>
     <NuxtLayout>
+      <NuxtLoadingIndicator />
       <NuxtRouteAnnouncer />
       <!-- <NuxtWelcome /> -->
-      <NuxtPage></NuxtPage>
+      <NuxtPage />
     </NuxtLayout>
   </div>
 </template>

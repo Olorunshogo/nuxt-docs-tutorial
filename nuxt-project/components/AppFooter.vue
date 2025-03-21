@@ -36,7 +36,7 @@
           <p>Phone: +234(0) 704 4456 7789</p>
         </div>
 
-        <div class="mt-6 text-sm text-center md:text-left">
+        <div class="text-sm text-center md:text-left">
           <p>
             &copy; 
             {{ currentYear }}

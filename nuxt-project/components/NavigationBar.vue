@@ -71,11 +71,11 @@
                         About
                     </NuxtLink>
 
-                    <NuxtLink to="/posts/1" aria-label="Go to Post 1" @click="closeSidebar" target="_blank">
+                    <NuxtLink to="/posts/1" aria-label="Go to Post 1" @click="closeSidebar">
                         Post 1
                     </NuxtLink>
 
-                    <NuxtLink to="/posts/2" aria-label="Go to Post 2" @click="closeSidebar" target="_blank">
+                    <NuxtLink to="/posts/2" aria-label="Go to Post 2" @click="closeSidebar">
                         Post 2
                     </NuxtLink>
                 </div>
@@ -90,11 +90,11 @@
                         About
                     </NuxtLink>
 
-                    <NuxtLink to="/posts/1" aria-label="Go to Post 1" target="_blank">
+                    <NuxtLink to="/posts/1" aria-label="Go to Post 1">
                         Post 1
                     </NuxtLink>
 
-                    <NuxtLink to="/posts/2" aria-label="Go to Post 2" target="_blank">
+                    <NuxtLink to="/posts/2" aria-label="Go to Post 2">
                         Post 2
                     </NuxtLink>
                 </div>
@@ -109,11 +109,11 @@
                         About
                     </NuxtLink>
 
-                    <NuxtLink to="/posts/1" aria-label="Go to Post 1" target="_blank">
+                    <NuxtLink to="/posts/1" aria-label="Go to Post 1">
                         Post 1
                     </NuxtLink>
 
-                    <NuxtLink to="/posts/2" aria-label="Go to Post 2" target="_blank">
+                    <NuxtLink to="/posts/2" aria-label="Go to Post 2">
                         Contact
                     </NuxtLink>
                 </div> -->
