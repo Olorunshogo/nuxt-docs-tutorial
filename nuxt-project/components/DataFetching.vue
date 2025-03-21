@@ -102,6 +102,11 @@
     const useColor = () => useState<string>('color', () => 'pink')
     const currentColor = useColor();
 
+    // For demonstration purposes, we're passing a mock error to the child.
+    const errorMock = {
+        statusCode: 404,
+    }
+
 </script>
 
 
@@ -214,6 +219,11 @@
                 <p>Current color: {{ currentColor }}</p>
             </div>
         </div>
+
+        <!-- Error Handling -->
+        <NuxtErrorBoundary :error="errorMock">
+            <p>This is the content inside the NuxtErrorBoundary slot! </p>
+        </NuxtErrorBoundary>
     </div>
 </template>
 
