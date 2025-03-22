@@ -1,96 +1,19 @@
 
 <script lang="ts" setup>
     import { ref } from 'vue';
-    import { useFetch, useAsyncData, useState } from 'nuxt/app';
-    import type { ProductInfo, Product } from '../types/products';
+    import { useState } from 'nuxt/app';
+    // import type { ProductInfo, Product } from '../types/products';
+    import { useProductsCategories } from '../composables/productsCategories';
     import { useLocales, useLocale, useDefaultLocale, useLocaleDate } from '../stores/locale';
+    import { useHandleForm } from '../composables/handleForm';
 
     const data = ref<any>(null);
-    const formData = ref({
-        name: '',
-        age: 0,
-        email: 0,
-        password: 0
-    });
 
-    const isSubmitting = ref<boolean>(false);
-    const errorMessage = ref<string>('');
-    const successMessage = ref<string>('');
-
-    async function handleFormSubmit(e: Event) {
-        e.preventDefault();
-        isSubmitting.value = true;
-        errorMessage.value = '';
-        successMessage.value = '';
-
-        try {
-            const response = await useFetch('/api/submitForm', {
-                method: 'POST',
-                body: formData.value,
-            });
-            successMessage.value = 'Form submitted successfully!'
-            console.log(response);
-        } catch (error) {
-            console.error('Error submitting form: ', error);
-        } finally {
-            isSubmitting.value = false;
-        }
-    }
+    const { isSubmitting, errorMessage, successMessage, formData, handleFormSubmit } = useHandleForm();
 
     // Data Fetching with NUXT3 by John Kramanski
-    // const { pending, data: products, refresh } = useFetch(
-    //     'https://fakestoreapi.com/products', 
-    //     {
-    //         lazy: false,
-    //         // server: false,
-    //         transform: (products) => {
-    //             return products.map((product) => ({
-    //                 id: product.id,
-    //                 title: product.title,
-    //                 image: product.image,
-    //             }))
-    //         }
-    //     }
-    // );
-
-    // const { pending, data: products } = useFetch(
-    //     'https://fakestoreapi.com/products', 
-    //     {
-    //         lazy: false,
-    //         // pick: ["id","image", "title"],
-    //     }
-    // );  
-    const { pending, data: productInfo, refresh, error } = useAsyncData<ProductInfo>(
-        'productInfo', 
-        async () => {
-            const [products, categories] = await Promise.all([
-                $fetch("https://fakestoreapi.com/products"),
-                $fetch("https://fakestoreapi.com/products/categories"),
-            ]);
-            
-            return {
-                products: products as Product[], 
-                categories: categories as string[],
-            };      
-        }, 
-        {
-            lazy: false,
-            transform: (productInfo) => {
-                return {
-                    categories: productInfo.categories,
-                    products: productInfo.products.map((product) => ({
-                        id: product.id,
-                        title: product.title,
-                        image: product.image
-                    }))
-                }
-            }
-        }
-    )
-
-    const handleRefresh = async (event: Event) => {
-        await refresh();
-    };
+    const { pending, productInfo, handleRefresh, error } = useProductsCategories();
+    
     
     // State Management: useState()
     const counter = useState('counter', () => Math.round(Math.random() * 1000));
@@ -116,6 +39,7 @@
             <div v-if="data == null">
                 No data!
             </div>
+            
             <div v-else>
                 <form @submit.prevent="handleFormSubmit">
                     <!-- Form Input Fields -->
