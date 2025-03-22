@@ -18,109 +18,77 @@
 
 <template>
   <div>
-    <header class="p-4 text-white bg-gray-800">
-        <nav class="mx-auto max-w-7xl">
-            <div class="relative flex flex-wrap items-center justify-between">
-                <!-- Logo or Branding -->
-                <div class="flex items-center space-x-2">
-                    <NuxtLink to="/" aria-label="Home">
-                        <img
-                            src="../public/favicon.ico" alt="Logo" class="w-auto h-auto"
-                        />
-                    </NuxtLink>
-                </div>
+    <nav class="mx-auto">
+        <div class="relative flex flex-wrap items-center justify-between">
+            
 
-                <!-- Mobile hamburger Button -->               
-                <button
-                    @click="toggleSidebar" aria-label="Toggle Navigation"
-                    class="text-white md:hidden focus:outline-none"
-                >
-                    <Transition name="icon-transition" mode="out-in">
-                        <span :key="isSidebarOpen ? 'x-icon' : 'hamburger-icon'">
-                            <span v-if="!isSidebarOpen" class="hamburger-icon">
-                                &#9776; <!-- This is the hamburger symbol, or you can use an SVG/icon -->
-                            </span>
-
-                            <!-- X Icon -->
-                            <span v-if="isSidebarOpen" class="x-icon">
-                                &times; <!-- This is the "X" symbol, or you can use an SVG/icon -->
-                            </span>
+            <!-- Mobile hamburger Button -->               
+            <button
+                aria-label="Toggle Navigation" class="text-white md:hidden focus:outline-none"
+                @click="toggleSidebar"
+            >
+                <Transition name="icon-transition" mode="out-in">
+                    <span :key="isSidebarOpen ? 'x-icon' : 'hamburger-icon'">
+                        <span v-if="!isSidebarOpen" class="hamburger-icon">
+                            &#9776; <!-- This is the hamburger symbol, or you can use an SVG/icon -->
                         </span>
-                    </Transition>
-                </button>
 
-                <!-- Sidebar (Mobile) -->
-                <!-- <div 
-                    v-show="isSidebarOpen" @click="closeSidebar"
-                    class="fixed inset-0 z-50 bg-gray-800 bg-opacity-75 md:hidden"
-                ></div> -->
-                <div 
-                    v-show="isSidebarOpen" @click="closeSidebar"
-                    class="fixed inset-0 z-50 bg-transparent bg-opacity-75 md:hidden"
-                ></div>
+                        <!-- X Icon -->
+                        <span v-if="isSidebarOpen" class="x-icon">
+                            &times; <!-- This is the "X" symbol, or you can use an SVG/icon -->
+                        </span>
+                    </span>
+                </Transition>
+            </button>
 
-                <div
-                    :class="{'transform translate-x-90': isSidebarOpen, 'transform transform-x-0': !isSidebarOpen}"
-                    class="fixed top-0 z-50 flex w-2/4 h-full p-4 space-x-4 transition-transform duration-300 ease-in-out bg-gray-900 -left-90 md:hidden  *:px-4 *:py-2 *:rounded-lg *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl"
-                >
-                    <NuxtLink to="/" aria-label="Go to Home"  @click="closeSidebar">
-                        Home
-                    </NuxtLink>
+            <!-- Sidebar (Mobile) -->
+            <div 
+                v-show="isSidebarOpen" class="fixed inset-0 z-50 bg-transparent bg-opacity-75 md:hidden"
+                @click="closeSidebar"
+            />
 
-                    <NuxtLink to="/about" aria-label="Go to About"  @click="closeSidebar">
-                        About
-                    </NuxtLink>
+            <div
+                :class="{'transform translate-x-90': isSidebarOpen, 'transform transform-x-0': !isSidebarOpen}"
+                class="fixed top-0 z-50 flex flex-col w-2/4 h-full p-4 text-center space-x-8 transition-transform duration-300 ease bg-gray-900 -left-90 md:hidden *:py-4 *:my-1 *:rounded-lg *:hover:text-gray-400 *:hover:ring-1 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl"
+            >
+                <NuxtLink to="/" aria-label="Go to Home"  @click="closeSidebar">
+                    Home
+                </NuxtLink>
 
-                    <NuxtLink to="/posts/1" aria-label="Go to Post 1" @click="closeSidebar">
-                        Post 1
-                    </NuxtLink>
+                <NuxtLink to="/about" aria-label="Go to About"  @click="closeSidebar">
+                    About
+                </NuxtLink>
 
-                    <NuxtLink to="/posts/2" aria-label="Go to Post 2" @click="closeSidebar">
-                        Post 2
-                    </NuxtLink>
-                </div>
+                <NuxtLink to="/posts/1" aria-label="Go to Post 1" @click="closeSidebar">
+                    Post 1
+                </NuxtLink>
 
-                <!-- Desktop Navigation (Flex) -->
-                <div class="hidden space-x-6 md:flex *:px-4 *:rounded-lg *:py-2 *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl">
-                    <NuxtLink to="/" aria-label="Go to Home">
-                        Home
-                    </NuxtLink>
-
-                    <NuxtLink to="/about" aria-label="Go to About">
-                        About
-                    </NuxtLink>
-
-                    <NuxtLink to="/posts/1" aria-label="Go to Post 1">
-                        Post 1
-                    </NuxtLink>
-
-                    <NuxtLink to="/posts/2" aria-label="Go to Post 2">
-                        Post 2
-                    </NuxtLink>
-                </div>
-
-                <!-- Mobile Navigation (Grid) -->
-                <!-- <div class="grid grid-cols-1 gap-4 md:hidden *:px-4 *:py-2 *:rounded-lg *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl">
-                    <NuxtLink to="/" aria-label="Go to Home">
-                        Home
-                    </NuxtLink>
-
-                    <NuxtLink to="/about" aria-label="Go to About">
-                        About
-                    </NuxtLink>
-
-                    <NuxtLink to="/posts/1" aria-label="Go to Post 1">
-                        Post 1
-                    </NuxtLink>
-
-                    <NuxtLink to="/posts/2" aria-label="Go to Post 2">
-                        Contact
-                    </NuxtLink>
-                </div> -->
-                
+                <NuxtLink to="/posts/2" aria-label="Go to Post 2" @click="closeSidebar">
+                    Post 2
+                </NuxtLink>
             </div>
-        </nav>
-    </header>
+
+            <!-- Desktop Navigation (Flex) -->
+            <div class="hidden space-x-6 md:flex *:px-4 *:rounded-lg *:py-2 *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl">
+                <NuxtLink to="/" aria-label="Go to Home">
+                    Home
+                </NuxtLink>
+
+                <NuxtLink to="/about" aria-label="Go to About">
+                    About
+                </NuxtLink>
+
+                <NuxtLink to="/posts/1" aria-label="Go to Post 1">
+                    Post 1
+                </NuxtLink>
+
+                <NuxtLink to="/posts/2" aria-label="Go to Post 2">
+                    Post 2
+                </NuxtLink>
+            </div>
+            
+        </div>
+    </nav>
   </div>
 </template>
 

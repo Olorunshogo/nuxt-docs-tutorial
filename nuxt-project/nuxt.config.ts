@@ -1,8 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
 
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
+  future: {
+    compatibilityVersion: 4
+  },
   devtools: { enabled: true },
   css: ['./assets/css/main.css'],
 
@@ -28,14 +32,15 @@ export default defineNuxtConfig({
         lang: 'en'
       },
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: './public/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: './public/favicon.ico' },
+        { rel: 'icon', type: 'image/svg+xml', href: './public/nuxt-logo.svg' }
       ]
     },
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' }
   },
 
-  modules: ['@formkit/nuxt'],
+  modules: ['@formkit/nuxt', '@nuxt/eslint', '@nuxt/image'],
   formkit: {
     // Experimental support for auto Loading (see note)
     autoImport: true,
@@ -69,5 +74,13 @@ export default defineNuxtConfig({
       //
     }
   },
+
+  // Prerender
+  nitro: {
+    prerender: {
+      routes: ["./pages/posts/[1].vue", "./pages/posts/[2].vue"],
+      ignore: ["./pages/index.vue", "./pages/about.vue"]
+    }
+  }
 
 })

@@ -1,13 +1,13 @@
 
 <script lang="ts" setup>
     import { ref } from 'vue';
-    import { useState } from 'nuxt/app';
+    import { useState, useCookie } from 'nuxt/app';
     // import type { ProductInfo, Product } from '../types/products';
     import { useProductsCategories } from '../composables/productsCategories';
-    import { useLocales, useLocale, useDefaultLocale, useLocaleDate } from '../stores/locale';
+    import { useLocale, useLocaleDate } from '../stores/locale';
     import { useHandleForm } from '../composables/handleForm';
 
-    const data = ref<any>(null);
+    const data = ref<null>(null);
 
     const { isSubmitting, errorMessage, successMessage, formData, handleFormSubmit } = useHandleForm();
 
@@ -16,10 +16,14 @@
     
     
     // State Management: useState()
+    type Counter = {
+        counter: number
+    }
     const counter = useState('counter', () => Math.round(Math.random() * 1000));
     
-    const locales = useLocales()
+    
     const locale = useLocale()
+    //const locales = useLocales()    
     const date = useLocaleDate(new Date('2016-10-26'))
 
     const useColor = () => useState<string>('color', () => 'pink')
@@ -45,22 +49,22 @@
                     <!-- Form Input Fields -->
                     <div>
                         <label for="name">Name</label>
-                        <input v-model="formData.name" id="name" type="text" required />
+                        <input id="name" v-model="formData.name" type="text" required >
                     </div>
 
                     <div>
                         <label for="age">Age</label>
-                        <input v-model="formData.age" id="age" type="number" required />
+                        <input id="age" v-model="formData.age" type="number" required >
                     </div>
 
                     <div>
                         <label for="email">Email</label>
-                        <input v-model="formData.email" id="email" type="email" required />
+                        <input id="email" v-model="formData.email" type="email" required >
                     </div>
 
                     <div>
                         <label for="password">Password</label>
-                        <input v-model="formData.password" id="password" type="password" required />
+                        <input id="password" v-model="formData.password" type="password" required >
                     </div>
 
                     <div><button type="submit" :disabled="isSubmitting">Submit</button></div>
@@ -121,10 +125,11 @@
         <!-- State Management -->
         <div>
             <div class="flex items-center">
-                Counter: {{ counter }}
+                Counter: {{ counter || 0 }}
                 <div class="btn-container">
-                    <button @click="counter+=2" class="shadow-lg normal-btn">+ 2</button>
-                    <button @click="counter-=1" class="shadow-lg normal-btn">- 1</button>
+                    <button class="shadow-lg normal-btn hover:ring-sky-700 hover:ring-2" @click="counter=0">Reset</button>
+                    <button class="shadow-lg normal-btn hover:ring-sky-700 hover:ring-2" @click="counter+=2">+ 2</button>
+                    <button class="shadow-lg normal-btn hover:ring-sky-700 hover:ring-2" @click="counter-=1">- 1</button>
                 </div>
             </div>
 
@@ -132,7 +137,7 @@
                 <h2>NUXT birthday</h2>
                 <p>{{ date }}</p>
                 <label for="locale-chooser">Preview a different locale</label>
-                <select name="locale-chooser" id="locale-chooser" v-model="locale">
+                <select id="locale-chooser" v-model="locale" name="locale-chooser">
                     <option id="locale-chooser" :key="locale" :value="locale">
                         {{ locale }}
                     </option>
@@ -146,7 +151,7 @@
 
         <!-- Error Handling -->
         <NuxtErrorBoundary :error="errorMock">
-            <p>This is the content inside the NuxtErrorBoundary slot! </p>
+            <p class="text-red-600">This is the content inside the NuxtErrorBoundary slot! </p>
         </NuxtErrorBoundary>
     </div>
 </template>

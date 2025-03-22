@@ -1,9 +1,7 @@
 
+
 <script lang="ts" setup>
-  import { useSeoMeta, useHead } from '#app';
-  useSeoMeta({
-    title: 'App.vue',
-  })
+  import { useHead } from "nuxt/app";
 
   useHead({
     titleTemplate: '%s - Get Started with NUXT'
@@ -16,8 +14,16 @@
 
 <template>
   <div>
+    <!-- Add a hidden element with a page title to announce route changes to assistive technologies. -->
+    <NuxtRouteAnnouncer />
+
+    <!-- Display a progress bar between page navigations -->
+    <NuxtLoadingIndicator />
+
     <NuxtLayout>
-      <NuxtLoadingIndicator />
+      
+
+      
       <NuxtRouteAnnouncer />
       <!-- <NuxtWelcome /> -->
       <NuxtPage />
