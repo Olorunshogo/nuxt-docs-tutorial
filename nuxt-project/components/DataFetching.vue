@@ -1,7 +1,7 @@
 
 <script lang="ts" setup>
-    import { ref } from 'vue';
-    import { useState, useCookie } from 'nuxt/app';
+    import { ref, onMounted } from 'vue';
+    import { useState, useCookie, useNuxtApp } from 'nuxt/app';
     // import type { ProductInfo, Product } from '../types/products';
     import { useProductsCategories } from '../composables/productsCategories';
     import { useLocale, useLocaleDate } from '../stores/locale';
@@ -153,6 +153,7 @@
         <NuxtErrorBoundary :error="errorMock">
             <p class="text-red-600">This is the content inside the NuxtErrorBoundary slot! </p>
         </NuxtErrorBoundary>
+         
     </div>
 </template>
 
