@@ -51,39 +51,47 @@
                 :class="{'transform translate-x-90': isSidebarOpen, 'transform transform-x-0': !isSidebarOpen}"
                 class="fixed top-0 z-50 flex flex-col w-2/4 h-full p-4 text-center space-x-8 transition-transform duration-300 ease bg-gray-900 -left-90 md:hidden *:py-4 *:my-1 *:rounded-lg *:hover:text-gray-400 *:hover:ring-1 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl"
             >
-                <NuxtLink to="/" aria-label="Go to Home"  @click="closeSidebar">
+                <NuxtLink to="/" aria-label="Go to Home Page"  @click="closeSidebar">
                     Home
                 </NuxtLink>
 
-                <NuxtLink to="/about" aria-label="Go to About"  @click="closeSidebar">
+                <NuxtLink to="/about" aria-label="Go to About Page"  @click="closeSidebar">
                     About
                 </NuxtLink>
 
-                <NuxtLink to="/posts/1" aria-label="Go to Post 1" @click="closeSidebar">
+                <NuxtLink to="/posts/01" aria-label="Go to Post 1 Page" @click="closeSidebar">
                     Post 1
                 </NuxtLink>
 
-                <NuxtLink to="/posts/2" aria-label="Go to Post 2" @click="closeSidebar">
-                    Post 2
+                <NuxtLink to="/posts/02" aria-label="Go to post 2 Page" @click="closeSidebar">
+                    Data Fetching
+                </NuxtLink>
+
+                <NuxtLink to="/login" aria-label="Login Page" target="_blank" @click="closeSidebar">
+                    Login
                 </NuxtLink>
             </div>
 
             <!-- Desktop Navigation (Flex) -->
             <div class="hidden space-x-6 md:flex *:px-4 *:rounded-lg *:py-2 *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl">
-                <NuxtLink to="/" aria-label="Go to Home">
+                <NuxtLink to="/" aria-label="Go to Home Page">
                     Home
                 </NuxtLink>
 
-                <NuxtLink to="/about" aria-label="Go to About">
+                <NuxtLink to="/about" aria-label="Go to About Page">
                     About
                 </NuxtLink>
 
-                <NuxtLink to="/posts/1" aria-label="Go to Post 1">
+                <NuxtLink to="/posts/01" aria-label="Go to Post 1 Page">
                     Post 1
                 </NuxtLink>
 
-                <NuxtLink to="/posts/2" aria-label="Go to Post 2">
-                    Post 2
+                <NuxtLink to="/posts/02" aria-label="Go to Post 2 Page">
+                    Posts 2
+                </NuxtLink>
+
+                <NuxtLink to="/login" aria-label="Login Page" target="_blank">
+                    Login
                 </NuxtLink>
             </div>
             

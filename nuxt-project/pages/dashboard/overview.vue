@@ -1,9 +1,14 @@
 
 <script lang="ts" setup>
-    // import { definePageMeta } from '#imports';
-    // definePageMeta({
-    //     middleware: 'auth'
-    // })
+  import { useHead  } from 'nuxt/app'
+
+  useHead({
+    title: 'Dashboard'
+  })
+
+  definePageMeta({
+    layout: 'dashboard'
+  })
 </script>
 
 <template>
