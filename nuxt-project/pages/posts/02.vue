@@ -1,5 +1,7 @@
 
 <script lang="ts" setup>
+    import { useHead } from 'nuxt/app';
+
     useHead({
         title: 'Posts[2]'
     })

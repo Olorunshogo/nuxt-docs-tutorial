@@ -1,7 +1,7 @@
 
 <script lang="ts" setup>
     import { reactive } from 'vue';
-    import { useHead, navigateTo } from 'nuxt/app';
+    import { useSeoMeta, useHead, navigateTo } from 'nuxt/app';
     //import { useUserSession } from '../composables/useUserSession';
     //const { loggedIn, user, fetch: refreshSession } = useUserSession()
     const credentials = reactive({
@@ -10,9 +10,7 @@
         password: ''
     })
 
-    useHead({
-        title: 'Login Page'
-    });
+    
 
     definePageMeta({
         layout: 'dashboard'

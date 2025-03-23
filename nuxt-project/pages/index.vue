@@ -5,7 +5,7 @@
   console.log(runtimeConfig.public.apiBase)
 
   const appConfig = useAppConfig()
-  import { useAppConfig, useHead, useRuntimeConfig } from '#app';
+  import { useAppConfig, useHead, useRuntimeConfig } from 'nuxt/app';
 
   useHead({
     title: 'Index',

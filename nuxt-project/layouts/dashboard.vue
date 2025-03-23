@@ -1,7 +1,10 @@
 
 <script lang="ts" setup>
-
-
+import { useSeoMeta } from 'nuxt/app';
+useSeoMeta({
+    title:'Dashboard',
+    titleTemplate: '%s - Get Started with NUXT',
+})
   
 </script>
 

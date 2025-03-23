@@ -8,7 +8,6 @@ export default defineNuxtConfig({
       charset: 'utf-16',
       viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
       title: 'NUXT App',
-      titleTemplate: '%s - Get Started with NUXT',
       meta: [
         { name: 'description', content: 'NUXT APP' }
       ],
@@ -17,6 +16,7 @@ export default defineNuxtConfig({
       },
       link: [
         { rel: 'icon', type: 'image/x-icon', href: './public/favicon.ico' },
+        // { rel: 'icon', type: 'image/png', href: './public/favicon.ico' },
         { rel: 'icon', type: 'image/svg+xml', href: './public/nuxt-logo.svg' }
       ]
     },
