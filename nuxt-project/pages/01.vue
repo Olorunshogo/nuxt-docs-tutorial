@@ -1,18 +1,13 @@
 
 <script lang="ts" setup>
     import { useRoute } from 'vue-router';
-    // import { useHead } from '#app/composables/head'
+    import { useHead } from 'nuxt/app'
     const route = useRoute();
     console.log(route.params.id);
     
-    // definePageMeta({
-    //     validate: async (route) => {
-    //         return typeof route.params.id === 'string' && /^\d+$/.test(route.params.id)
-    //     }
-    // })
 
     useHead({
-        title: 'Posts[1]'
+        title: 'Post 1'
     })
 
 </script>

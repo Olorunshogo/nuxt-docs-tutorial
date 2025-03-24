@@ -59,11 +59,11 @@
                     About
                 </NuxtLink>
 
-                <NuxtLink to="/posts/01" aria-label="Go to Post 1 Page" @click="closeSidebar">
+                <NuxtLink to="/01" aria-label="Go to Post 1 Page" @click="closeSidebar">
                     Post 1
                 </NuxtLink>
 
-                <NuxtLink to="/posts/02" aria-label="Go to post 2 Page" @click="closeSidebar">
+                <NuxtLink to="/02" aria-label="Go to post 2 Page" @click="closeSidebar">
                     Data Fetching
                 </NuxtLink>
 
@@ -74,24 +74,40 @@
 
             <!-- Desktop Navigation (Flex) -->
             <div class="hidden space-x-6 md:flex *:px-4 *:rounded-lg *:py-2 *:hover:text-gray-400 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl">
-                <NuxtLink to="/" aria-label="Go to Home Page">
-                    Home
+                <NuxtLink to="/" aria-label="Go to Home Page" class="flex items-center">
+                    <span class="flex items-center mr-1 text-xl"> 
+                        <!-- <Icon name="mdi:home-variant" />  -->
+                        <Icon name="mdi:home" /> 
+                    </span>
+                    <span>Home</span>
                 </NuxtLink>
 
-                <NuxtLink to="/about" aria-label="Go to About Page">
-                    About
+                <NuxtLink to="/about" aria-label="Go to About Page" class="flex items-center">
+                    <span class="flex items-center mr-1 text-xl"> 
+                        <Icon name="mdi:about" /> 
+                    </span>
+                    <span>About</span>
                 </NuxtLink>
 
-                <NuxtLink to="/posts/01" aria-label="Go to Post 1 Page">
-                    Post 1
+                <NuxtLink to="/01" aria-label="Go to Post 1 Page" class="flex items-center">
+                    <span class="flex items-center mr-1 text-xl"> 
+                        <Icon name="mdi:database-check-outline" /> 
+                    </span>
+                    <span>Post 1</span>
                 </NuxtLink>
 
-                <NuxtLink to="/posts/02" aria-label="Go to Post 2 Page">
-                    Posts 2
+                <NuxtLink to="/02" aria-label="Go to Post 2 Page" class="flex items-center">
+                    <span class="flex items-center mr-1 text-xl"> 
+                        <Icon name="mdi:form" /> 
+                    </span>
+                    <span>Post 2</span>
                 </NuxtLink>
 
-                <NuxtLink to="/login" aria-label="Login Page" target="_blank">
-                    Login
+                <NuxtLink to="/login" aria-label="Login Page" target="_blank" class="flex items-center">
+                    <span class="flex items-center mr-1 text-xl"> 
+                        <Icon name="mdi:login-variant" /> 
+                    </span>
+                    <span>Login</span>
                 </NuxtLink>
             </div>
             

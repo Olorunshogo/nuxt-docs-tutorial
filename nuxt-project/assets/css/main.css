@@ -5,18 +5,4 @@
     :root {
         --nav-height: 5rem;
     }
-
-    .btn-container {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin: 0 1rem;
-    }
-
-    .normal-btn {
-        padding: 0.5rem 1rem;
-        border: 1px solid grey;
-        border-radius: 0.5rem;
-        border: 1px solid gray;
-    }
 }

@@ -10,8 +10,12 @@
       <div class="flex items-center justify-between p-4 mx-auto max-w-7xl h-(--nav-height)">
         <!-- Logo or Branding -->
         <div class="flex items-center space-x-2">
-          <NuxtLink to="/" aria-label="Home">
-            <NuxtImg src="../public/nuxt-logo.svg" width="70" height="auto" />
+          <NuxtLink to="/" aria-label="Home" class="w-32">
+            <NuxtImg 
+              width="70px" height="auto" alt="Logo"
+              src="../public/nuxt-logo.png"
+              format="png" fit="cover" preload loading="lazy"
+            />
           </NuxtLink>
         </div>
         

@@ -126,10 +126,10 @@
         <div>
             <div class="flex items-center">
                 Counter: {{ counter || 0 }}
-                <div class="btn-container">
-                    <button class="shadow-lg normal-btn hover:ring-sky-700 hover:ring-2" @click="counter=0">Reset</button>
-                    <button class="shadow-lg normal-btn hover:ring-sky-700 hover:ring-2" @click="counter+=2">+ 2</button>
-                    <button class="shadow-lg normal-btn hover:ring-sky-700 hover:ring-2" @click="counter-=1">- 1</button>
+                <div class="flex items-center gap-4 mx-4">
+                    <button class="px-4 py-2 rounded-lg shadow-lg border-1 border-slate-700 hover:ring-sky-700 hover:ring-2" @click="counter=0">Reset</button>
+                    <button class="px-4 py-2 rounded-lg shadow-lg border-1 border-slate-700 hover:ring-sky-700 hover:ring-2" @click="counter+=2">+ 2</button>
+                    <button class="px-4 py-2 rounded-lg shadow-lg border-1 border-slate-700 hover:ring-sky-700 hover:ring-2" @click="counter-=1">- 1</button>
                 </div>
             </div>
 

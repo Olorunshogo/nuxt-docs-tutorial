@@ -8,12 +8,12 @@
     <footer class="p-4 font-sans text-white bg-gray-800">
       <div class="grid grid-cols-1 md:grid-cols-2 xl:mx-auto xl:flex xl:flex-wrap lg:justify-between max-w-7xl">
         <div class="flex-1 m-2.5">
-          <h3 class="mb-2.5 font-semibold text-lg">About Us</h3>
+          <h2 class="mb-2.5 font-semibold text-lg">About Us</h2>
           <p>We are a leading company providing high-quality products and services.</p>
         </div>
 
         <div class="flex-1 m-2.5">
-          <h3 class="mb-2.5 font-semibold text-lg">Quick Links</h3>
+          <h2 class="mb-2.5 font-semibold text-lg">Quick Links</h2>
           <ul class="p-0 list-none">
             <li class="mb-2 *:text-white *:decoration-0 *:hover:underline *:hover:decoration-1">
               <NuxtLink to="/">Home</NuxtLink>
@@ -31,7 +31,7 @@
         </div>
 
         <div class="flex-1 m-2.5">
-          <h3 class="mb-2.5 font-semibold text-lg">Contact</h3>
+          <h2 class="mb-2.5 font-semibold text-lg">Contact</h2>
           <p>Email: info@example.com</p>
           <p>Phone: +234(0) 704 4456 7789</p>
         </div>
