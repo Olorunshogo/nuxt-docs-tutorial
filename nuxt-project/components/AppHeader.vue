@@ -9,22 +9,21 @@
 <template>
   <div>
 
-    <header class="relative text-white bg-gray-800">
-      <div class="flex items-center justify-between p-4 mx-auto max-w-7xl h-(--nav-height)">
+    <header class="relative text-white bg-gray-800 w-5/5">
+      <div class="flex relative items-center justify-between p-4 mx-auto max-w-7xl h-(--nav-height)">
         <!-- Logo or Branding -->
-        <div class="flex items-center space-x-2">
+        <div class="flex items-center w-2/5 max-w-xs space-x-2">
           <NuxtLink to="/" aria-label="Home">
             <span class="hidden md:flex">
               <NuxtImg 
-                width="70px" height="auto" alt="Logo"
+                width="70px" height="auto" alt="Green Logo"
                 :src="greenLogoUrl"
-                sizes="100vw sm:50vw md:400px"
                 format="png" fit="cover" preload
               />
             </span>
-            <span class="md:hidden block">
+            <span class="block md:hidden">
               <NuxtImg 
-              width="70px" height="auto" alt="Logo"
+              width="70px" height="auto" alt="White Logo"
               :src="whiteLogoUrl"
               sizes="100vw sm:50vw md:400px"
               format="png" fit="cover" preload

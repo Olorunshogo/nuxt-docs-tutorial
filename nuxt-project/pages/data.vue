@@ -7,7 +7,7 @@
     
 
     useHead({
-        title: 'Post 1'
+        title: 'Data Fetching'
     })
 
 </script>

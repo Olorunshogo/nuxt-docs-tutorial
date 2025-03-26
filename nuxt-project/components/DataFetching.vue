@@ -2,7 +2,6 @@
 <script lang="ts" setup>
     import { ref } from 'vue';
     import { useState } from 'nuxt/app';
-    // import type { ProductInfo, Product } from '../types/products';
     import { useProductsCategories } from '../composables/productsCategories';
     import { useLocale, useLocaleDate } from '../stores/locale';
     import { useHandleForm } from '../composables/handleForm';
