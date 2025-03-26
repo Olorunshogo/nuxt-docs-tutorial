@@ -1,7 +1,7 @@
 
 <script lang="ts" setup>
-    import { ref, onMounted } from 'vue';
-    import { useState, useCookie, useNuxtApp } from 'nuxt/app';
+    import { ref } from 'vue';
+    import { useState } from 'nuxt/app';
     // import type { ProductInfo, Product } from '../types/products';
     import { useProductsCategories } from '../composables/productsCategories';
     import { useLocale, useLocaleDate } from '../stores/locale';
@@ -16,10 +16,7 @@
     
     
     // State Management: useState()
-    type Counter = {
-        counter: number
-    }
-    const counter = useState('counter', () => Math.round(Math.random() * 1000));
+    const counter = useState<number>('counter', () => Math.round(Math.random() * 1000));
     
     
     const locale = useLocale()

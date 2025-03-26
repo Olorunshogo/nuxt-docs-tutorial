@@ -11,6 +11,7 @@
     "tailwindcss": "npx @tailwindcss/cli -i/assets/css/main.css -o ./dist/css/output.css --watch"
   },
   "dependencies": {
+    "@formkit/addons": "^1.6.9",
     "@formkit/icons": "^1.6.9",
     "@formkit/nuxt": "^1.6.9",
     "@nuxt/icon": "^1.11.0",

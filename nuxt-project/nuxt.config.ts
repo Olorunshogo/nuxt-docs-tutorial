@@ -22,8 +22,8 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' }
   },
   compatibilityDate: '2024-11-01',
-  // css: ['./assets/css/main.css'],
-  css: ['./assets/css/output.css'],
+  css: ['./assets/css/main.css'],
+  // css: ['./assets/css/output.css'],
   devtools: { enabled: true },
   $development: {},
 

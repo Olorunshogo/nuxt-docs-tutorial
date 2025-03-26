@@ -51,24 +51,46 @@
                 :class="{'transform translate-x-90': isSidebarOpen, 'transform transform-x-0': !isSidebarOpen}"
                 class="fixed top-0 z-50 flex flex-col w-2/4 h-full p-4 text-center space-x-8 transition-transform duration-300 ease bg-gray-900 -left-90 md:hidden *:py-4 *:my-1 *:rounded-lg *:hover:text-gray-400 *:hover:ring-1 *:focus:text-gray-400 *:focus:outline-none *:focus:ring-2 *:focus:ring-indigo-500 *:shadow-xl"
             >
-                <NuxtLink to="/" aria-label="Go to Home Page"  @click="closeSidebar">
-                    Home
+                <NuxtLink to="/" aria-label="Go to Home Page" class="flex items-center"  @click="closeSidebar">
+                    <span class="flex items-center mr-1 text-xl"> 
+                        <Icon name="mdi:home" /> 
+                    </span>
+                    <span>Home</span>
                 </NuxtLink>
 
-                <NuxtLink to="/about" aria-label="Go to About Page"  @click="closeSidebar">
-                    About
+                <NuxtLink to="/about" aria-label="Go to About Page" class="flex items-center"  @click="closeSidebar">
+                    <span class="flex items-center mr-1 text-xl"> 
+                        <Icon name="mdi:about" /> 
+                    </span>
+                    <span>About</span>
                 </NuxtLink>
 
-                <NuxtLink to="/01" aria-label="Go to Post 1 Page" @click="closeSidebar">
-                    Post 1
+                <NuxtLink to="/data" aria-label="Go to Data Fetching Page" class="flex items-center" @click="closeSidebar">
+                    <span class="flex items-center mr-1 text-xl"> 
+                        <Icon name="mdi:database-check-outline" /> 
+                    </span>
+                    <span>Data Fetching</span>
                 </NuxtLink>
 
-                <NuxtLink to="/02" aria-label="Go to post 2 Page" @click="closeSidebar">
-                    Data Fetching
+                <NuxtLink to="/forms" aria-label="Go to Forms Page" class="flex items-center" @click="closeSidebar">
+                    <span class="flex items-center mr-1 text-xl"> 
+                        <Icon name="mdi:form" /> 
+                    </span>
+                    <span>Forms</span>
                 </NuxtLink>
 
-                <NuxtLink to="/login" aria-label="Login Page" target="_blank" @click="closeSidebar">
-                    Login
+                <NuxtLink to="/forms" aria-label="Go to Forms Page" class="flex items-center" @click="closeSidebar">
+                    <span class="flex items-center mr-1 text-xl"> 
+                        <Icon name="mdi:form" /> 
+                    </span>
+                    <span>Forms</span>
+                </NuxtLink>
+
+                <NuxtLink to="/login" aria-label="Login Page" class="flex items-center hover:opacity-80" target="_blank" @click="closeSidebar">
+                    <span class="flex items-center mr-1 text-xl"> 
+                        <Icon name="mdi:login-variant" /> 
+                    </span>
+                    <span>Login</span>
                 </NuxtLink>
             </div>
 
@@ -89,18 +111,18 @@
                     <span>About</span>
                 </NuxtLink>
 
-                <NuxtLink to="/01" aria-label="Go to Post 1 Page" class="flex items-center">
+                <NuxtLink to="/data" aria-label="Go to Post 1 Page" class="flex items-center">
                     <span class="flex items-center mr-1 text-xl"> 
                         <Icon name="mdi:database-check-outline" /> 
                     </span>
-                    <span>Post 1</span>
+                    <span>Data Fetching</span>
                 </NuxtLink>
 
-                <NuxtLink to="/02" aria-label="Go to Post 2 Page" class="flex items-center">
+                <NuxtLink to="/forms" aria-label="Go to Post 2 Page" class="flex items-center">
                     <span class="flex items-center mr-1 text-xl"> 
                         <Icon name="mdi:form" /> 
                     </span>
-                    <span>Post 2</span>
+                    <span>Forms</span>
                 </NuxtLink>
 
                 <NuxtLink to="/login" aria-label="Login Page" target="_blank" class="flex items-center">

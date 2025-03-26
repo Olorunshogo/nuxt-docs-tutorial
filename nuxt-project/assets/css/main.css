@@ -4,5 +4,9 @@
 @layer utilities {
     :root {
         --nav-height: 5rem;
+        --nav-green: #00DC82;
+        --color-midnight: #121063;
+        --color-tahiti: #3ab7bf;
+        --color-bermuda: #78dcca;
     }
 }

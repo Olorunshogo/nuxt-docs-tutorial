@@ -3,96 +3,99 @@
     import { ref, onMounted, computed } from 'vue';
     import { getNode } from '@formkit/core';
     import { useHead } from 'nuxt/app';
+    import { avatarMan } from '@formkit/icons';
 
     useHead({
         title: 'Post 2'
     });
 
     // Form 1
-    // type Value = {
-    //     fullName: string | null;
-    //     Email: string | null;
-    //     favorite_food: string | null;
-    //     instructions: string | null;
-    //     length: number | null;
-    // }
+    const email = `<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="currentColor" d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></svg>`;
+    const location = `<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg>`;
+    type Value = {
+        fullName: string | null;
+        Email: string | null;
+        favorite_food: string | null;
+        instructions: string | null;
+        length: number | null;
+    }
 
-    // type Fields = {
-    //     fullName: string,
-    //     email: string,
-    //     class: string,
-    //     checkbox: string
-    // };
+    type Fields = {
+        fullName: string,
+        email: string,
+        class: string,
+        checkbox: string
+    };
 
-    // const data = ref<Record<string, any>>({
-    //     fullName: 'fullName',
-    //     Email: 'email@domain.com',
-    //     favorite_food: 'Pizza',
-    //     instructions: '',
+    const data = ref<Record<string, any>>({
+        fullName: 'fullName',
+        Email: 'email@domain.com',
+        favorite_food: 'Pizza',
+        instructions: '',
     
-    // });    
+    });    
 
-    // async function handleSubmit(value: Value) {
-    //     alert('Form has been submitted');
+    async function handleSubmit(value: Value) {
+        alert('Form has been submitted');
     
-    //     // Alert the individual values
-    //     // alert(`Full Name: ${value.fullName}`);
-    //     // alert(`Email: ${value.Email}`);
-    //     // alert(`Favorite Food: ${value.favorite_food}`);
-    //     // alert(`Special Instructions: ${value.instructions}`);
-    // }
+        // Alert the individual values
+        // alert(`Full Name: ${value.fullName}`);
+        // alert(`Email: ${value.Email}`);
+        // alert(`Favorite Food: ${value.favorite_food}`);
+        // alert(`Special Instructions: ${value.instructions}`);
+    }
 
     // Form 2 
-    // const isFormSubmitted = ref<boolean>(false);
-    // const isSubmittedModal = ref<boolean>(false);
+    const isFormSubmitted = ref<boolean>(false);
+    const isSubmittedModal = ref<boolean>(false);
     
-    // const submitForm = async (fields : Fields) => {
-    //     await new Promise((r) => {
-    //         setTimeout(r, 1000)
-    //     })
-    //     alert(JSON.stringify(fields))
-    //     console.log('Form Submitted');
-    //     // alert(JSON.stringify('Full Name is: ' + fields.fullName));
-    //     // alert(JSON.stringify('Email is: ' + fields.email));
-    //     // alert(JSON.stringify('Class is: ' + fields.class));
-    //     // alert(JSON.stringify('Checkbox is: ' + fields.checkbox));
+    const submitForm = async (fields : Fields) => {
+        await new Promise((r) => {
+            setTimeout(r, 1000)
+        })
+        alert(JSON.stringify(fields))
+        console.log('Form Submitted');
+        // alert(JSON.stringify('Full Name is: ' + fields.fullName));
+        // alert(JSON.stringify('Email is: ' + fields.email));
+        // alert(JSON.stringify('Class is: ' + fields.class));
+        // alert(JSON.stringify('Checkbox is: ' + fields.checkbox));
 
-    //     isFormSubmitted.value = true;        
+        isFormSubmitted.value = true;        
 
-    //     if (isFormSubmitted.value === true) {
-    //         setTimeout(() => {
-    //             isSubmittedModal.value = true;
-    //         }, 2000);
-    //     };
-    //     setTimeout(() => {
-    //         isSubmittedModal.value = false;
-    //     }, 5000);
-    // }
+        if (isFormSubmitted.value === true) {
+            setTimeout(() => {
+                isSubmittedModal.value = true;
+            }, 2000);
+        };
+        setTimeout(() => {
+            isSubmittedModal.value = false;
+        }, 5000);
+    }
 
-    // // Transition hooks for modal
-    // const beforeEnter = (el: Element) => {
-    //     if (el instanceof HTMLElement) {
-    //         el.style.transform = 'translateY(100%)'; // Start from the bottom
-    //         el.style.opacity = '0'; // Start hidden
-    //     }
-    // }
+    // Transition hooks for modal
+    const beforeEnter = (el: Element) => {
+        if (el instanceof HTMLElement) {
+            el.style.transform = 'translateY(100%)'; // Start from the bottom
+            el.style.opacity = '0'; // Start hidden
+        }
+    }
 
-    // const enter = (el: Element, done: Function) => {
-    //     if (el instanceof HTMLElement) {
-    //         el.offsetHeight; // Trigger reflow to restart the transition
-    //         el.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-    //         el.style.transform = 'translateY(0)'; // Move to the final position
-    //         el.style.opacity = '1'; // Fade in
-    //     }
-    //     done();
-    // };
+    const enter = (el: Element, done: Function) => {
+        if (el instanceof HTMLElement) {
+            el.offsetHeight; // Trigger reflow to restart the transition
+            el.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+            el.style.transform = 'translateY(0)'; // Move to the final position
+            el.style.opacity = '1'; // Fade in
+        }
+        done();
+    };
 
-    // const leave = (el: HTMLElement, done: Function) => {
-    //     el.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-    //     el.style.transform = 'translateY(100%)'; // Move back to the bottom
-    //     el.style.opacity = '0'; // Fade out
-    //     done();
-    // }; 
+    const leave = (el: HTMLElement, done: Function) => {
+        el.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+        el.style.transform = 'translateY(100%)'; // Move back to the bottom
+        el.style.opacity = '0'; // Fade out
+        done();
+    }; 
 
     // Form 3
     const city = ref<string>('Florence');
@@ -145,32 +148,40 @@
     <h1 class="text-2xl font-bold text-center">Posts 2 Page</h1>
     <p>This is the posts 2 page</p>
 
+    <a 
+        href="../public/cv/Full_CV.pdf"
+        download="Full_CV.pdf"
+        class="download-btn"
+    >
+        <button>Download Cv</button>
+    </a>
+
     <!-- FormKit -->
+    
     <div class="grid flex-wrap grid-cols-1 gap-8 lg:flex lg:gap-16">
 
-        <!-- <div>
+        <div>
             <h2 class="text-xl font-semibold text-center">Creating the form</h2>
 
-            <h3>Form 1</h3>
+            <!-- <h3>Form 1</h3>
             <FormKit
                 type="form" #default="{ value }" :value="data.value"
                 @submit="handleSubmit"
             >
                 <FormKit
                     type="text" label="Full Name" name="fullName" placeholder="Full Name"
-                    prefix-icon="name" validation="required|name|matches:/^@[a-zA-Z]+$/|length:5"
+                    :prefix-icon="avatarMan" validation="required|name|matches:/^@[a-zA-Z]+$/|length:5"
                     help="Full Name"
                 />
                 <FormKit
                     type="email" label="Your Email" name="Email" placeholder="email@domain.com"
-                    prefix-icon="email" validation="required|length:5|email"
+                    :prefix-icon="email" validation="required|length:5|email"
                     help="Order confirmation will be sent to your address"
                 />
                 <FormKit
                     type="select" label="Favorite Food" name="favorite_food" placeholder="Choose a food"
                     :options="['Pizza', 'Ice Cream', 'Burger']"
                 />
-
                 <FormKit
                     type="textarea" name="instructions" label="Special Instructions"
                     placeholder="Allergies? No-contact delivery? Let us know."
@@ -183,15 +194,14 @@
                 />            
 
                 <pre wrap>{{ value }}</pre>
-            </FormKit>
-        </div> -->
-
+            </FormKit> -->
+        </div>
         
 
         <!-- <div class="relative">
             <h3>Form 2</h3>
             <FormKit 
-                type="form" @submit="submitForm" 
+                type="form" @submit="submitForm"
                 submit-label="Submit" #default="{ value }"
             >
 
@@ -200,12 +210,12 @@
                 >
                     <FormKit 
                         type="text" name="firstName" id="firstName" label="First Name"
-                        placeholder="Scarlet" help="Enter your first name here"
+                        placeholder="Scarlet" help="Enter your first name here" suffix-icon="settings"
                         validation="required|name|matches:/^@[a-zA-Z]+$/|length:5|not:Admin"
                     />
                     <FormKit 
                         type="text" name="lastName" id="lastName" label="Last Name"
-                        validation="required|not:Admin" placeholder="Sword"
+                        validation="required|not:Admin" placeholder="Sword" icon="avatarWoman"
                         help="Enter your last name here"
                     />
                 </FormKit>
@@ -270,18 +280,18 @@
         </div> -->
 
         <h3>Form 3</h3>
-        <div class="relative">
-            <!-- <FormKit type="form">
+        <!-- <div class="relative">
+            <FormKit type="form" use-local-storage>
                 <FormKit
                     type="text" name="username" label="Username" placeholder="username"
-                    help="Pick a new username" value="@FormKit"
+                    help="Pick a new username" value="@FormKit" prefix-icon="avatarMan"
                     validation="required|matches:/^@[a-zA-Z]+$/|length:5"
                     data-category="username" :delay="1000"
                 />
                 <FormKit
                     type="text" label="European city" v-model="city"
                     help="What is your favorite European city?"
-                    data-category="city"
+                    data-category="city" :prefix-icon="location"
                 />
                 <FormKit type="button" @click="randomCity">Random City</FormKit>
                 <pre>City: {{ city }}</pre>
@@ -387,11 +397,11 @@
                     validation-visibility="live"
                 />
   
-            </FormKit> -->
-        </div>
+            </FormKit>
+        </div> -->
 
         <h4>Form 4</h4>
-        <div class="relative">
+        <!-- <div class="relative">
             <FormKit
                 type="form" id="registration-example" :actions="false"
                 :form-class="submitted ? 'hide' : 'show'" #default="{ value }"
@@ -442,7 +452,7 @@
             <div v-if="submitted">
                 <h2 class="text-xl text-green-500">Submission successful</h2>
             </div>
-        </div>
+        </div> -->
 
         
 
@@ -462,5 +472,19 @@
     .modal-transition-leave-to  {
         transform: translateY(100%);
         opacity: 0;
+    }
+
+    .download-btn button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+
+    .download-btn button:hover {
+        background-color: #45a049;
     }
 </style>
